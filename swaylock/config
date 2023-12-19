@@ -1,0 +1,9 @@
+ignore-empty-password
+daemonize
+image=/usr/share/backgrounds/gnome/pexels-johannes-plenio-1114900.jpg
+font=Cantarell
+indicator-idle-visible
+indicator-radius=75
+indicator-thickness=5
+inside-color=e5c07b
+ring-color=e5c07b

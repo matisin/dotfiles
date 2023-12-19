@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+#
+# Toggle the current window (all panes) between light and dark themes.
+set -e
+
+dark_style='fg=#abb2bf,bg=#282c34'
+light_style='fg=#383A42,bg=#FAFAFA'
+
+current_color_scheme=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
+
+if [ "$current_color_scheme" == "default" ]; then
+  tmux set window-style $dark_style
+  tmux set status-style $dark_style
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+  kitten themes --reload-in all One\ Dark
+else
+  tmux set window-style $light_style
+  tmux set status-style $light_style
+  gsettings set org.gnome.desktop.interface color-scheme 'default'
+  kitten themes --reload-in all Atom\ One\ Light
+fi;
+
+# # Obtener una lista de todas las sesiones de tmux
+# sessions=$(tmux list-sessions -F "#{session_id}")
+
+# # Iterar sobre cada sesión
+# for session_id in $sessions; do
+    # # Enviar las teclas a todas las ventanas de la sesión actual
+    # tmux send-keys -t $session_id ":source ~/.config/nvim/init.lua " C-m
+# done
+
