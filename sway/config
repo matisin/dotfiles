@@ -208,8 +208,8 @@ unbindsym $mod+Shift+e
 bindsym $mod+Shift+e mode $mode_system
 
 # Toggle notification bar
-set $toggle_notification "swaync-client -t -sw"
-bindsym $mod+Shift+n exec $toggle_notification
+# set $toggle_notification "swaync-client -t -sw"
+# bindsym $mod+Shift+n exec $toggle_notification
 
 # openSUSE theme
 default_border pixel 1
@@ -226,7 +226,7 @@ client.focused #1f2329 #1f2329 #1f2329 #1f2329 #1f2329
 client.unfocused #1f2329 #1f2329 #1f2329 #1f2329 #1f2329
 client.focused_inactive #1f2329 #1f2329 #1f2329 #1f2329 #1f2329
 
-seat seat0 xcursor_theme Adwaita 24
+seat seat0 xcursor_theme Adwaita 16
 exec_always {
   systemctl --user import-environment
   gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
@@ -234,7 +234,7 @@ exec_always {
   gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
   test -e $SWAYSOCK.wob || mkfifo $SWAYSOCK.wob
   tail -f $SWAYSOCK.wob | $wob
-  swaync --style /etc/sway/swaync/style.css --config /etc/sway/swaync/config.json
+  mako
 }
 
 exec /usr/libexec/polkit-gnome-authentication-agent-1

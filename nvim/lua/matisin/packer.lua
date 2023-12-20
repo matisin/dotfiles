@@ -12,7 +12,10 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use({ 'rose-pine/neovim', as = 'rose-pine' })
-  use({'navarasu/onedark.nvim', as = 'onedark'})
+  use({ 'navarasu/onedark.nvim', as = 'onedark' })
+  use({ 'arcticicestudio/nord-vim', as = 'nord' })
+  use({ 'Mofiqul/vscode.nvim', as = 'vscode' })
+  use({ 'ayu-theme/ayu-vim', as = 'ayu-vim' })
 
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('theprimeagen/harpoon')

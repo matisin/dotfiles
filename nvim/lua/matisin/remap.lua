@@ -37,3 +37,7 @@ vim.keymap.set("n", "<leader>tv", ":vsplit<Bar>:term<CR>")
 
 vim.keymap.set('n', '<leader>pv', ':Ex<CR>')
 
+-- vim.keymap.set("n", "<leader>tc", "<<F1>cmd>silent !tmux-toggle-scheme<CR>")
+
+vim.keymap.set('n', '<leader>tc', ':lua vim.cmd("silent !tmux-toggle-scheme"); ToggleTheme()<CR>')
+
