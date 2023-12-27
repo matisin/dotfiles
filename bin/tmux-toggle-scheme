@@ -3,22 +3,25 @@
 # Toggle the current window (all panes) between light and dark themes.
 set -e
 
-dark_style='fg=#abb2bf,bg=#282c34'
-light_style='fg=#383A42,bg=#FAFAFA'
+dark_style='fg=#cdd6f4,bg=#1e1e2e'
+light_style='fg=#4c4f69,bg=#eff1f5'
 
 current_color_scheme=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
 
 if [ "$current_color_scheme" == "default" ]; then
-  tmux set window-style $dark_style
-  tmux set status-style $dark_style
+  # tmux set -g window-style $dark_style
+  tmux set -g status-style $dark_style    
+  tmux set -g @catppuccin_flavour 'mocha'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-  kitten themes --reload-in all One\ Dark
+  kitty +kitten themes --reload-in=all Catppuccin-Mocha
 else
-  tmux set window-style $light_style
-  tmux set status-style $light_style
+  tmux set -g @catppuccin_flavour 'latte'
+  # tmux set -g window-style $light_style
+  tmux set -g status-style $light_style  
   gsettings set org.gnome.desktop.interface color-scheme 'default'
-  kitten themes --reload-in all Atom\ One\ Light
+  kitty +kitten themes --reload-in=all Catppuccin-Latte
 fi;
+tmux source-file ~/.tmux.conf
 
 # # Obtener una lista de todas las sesiones de tmux
 # sessions=$(tmux list-sessions -F "#{session_id}")

@@ -6,16 +6,19 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use('lewis6991/gitsigns.nvim')
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
     -- or                            , branch = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
+  -- themes
   use({ 'rose-pine/neovim', as = 'rose-pine' })
   use({ 'navarasu/onedark.nvim', as = 'onedark' })
   use({ 'arcticicestudio/nord-vim', as = 'nord' })
   use({ 'Mofiqul/vscode.nvim', as = 'vscode' })
   use({ 'ayu-theme/ayu-vim', as = 'ayu-vim' })
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('theprimeagen/harpoon')
