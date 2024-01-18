@@ -25,7 +25,7 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>s", [[:%s/<C-r><C-w>/<C-r><C-w>/gc<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>F", "<cmd>:!eslint_d % --fix<CR>")
 
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
@@ -35,9 +35,7 @@ vim.keymap.set("t", "<ESC>k", "<C-\\><C-n><C-w>k")
 vim.keymap.set("n", "<leader>tt", ":belowright 20split<Bar>:term<CR>")
 vim.keymap.set("n", "<leader>tv", ":vsplit<Bar>:term<CR>")
 
-vim.keymap.set('n', '<leader>pv', ':Ex<CR>')
-
--- vim.keymap.set("n", "<leader>tc", "<<F1>cmd>silent !tmux-toggle-scheme<CR>")
+-- vim.keymap.set('n', '<leader>pv', ':Ex<CR>')
 
 vim.keymap.set('n', '<leader>tc', ':lua vim.cmd("silent !tmux-toggle-scheme"); GetTheme()<CR>')
 vim.keymap.set('n', '<leader>tg', ':lua GetTheme()<CR>')

@@ -326,7 +326,7 @@ local capybaras = {
 local function week_capybara()
   -- Días festivos y eventos especiales
   local specialDays = {
-    ["12-24"] = "new_year",        -- Año Nuevo
+    ["01-01"] = "new_year",        -- Año Nuevo
     ["07-04"] = "IndependenceDay",-- Día de la Independencia
     ["12-25"] = "christmas"       -- Navidad
     -- Añade aquí más días especiales según sea necesario

@@ -71,4 +71,5 @@ return require('packer').startup(function(use)
 
   use('preservim/nerdcommenter')
   use('tpope/vim-fugitive')
+  use('rhysd/conflict-marker.vim')
 end)
