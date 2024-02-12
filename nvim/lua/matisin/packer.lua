@@ -13,11 +13,6 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
   -- themes
-  use({ 'rose-pine/neovim', as = 'rose-pine' })
-  use({ 'navarasu/onedark.nvim', as = 'onedark' })
-  use({ 'arcticicestudio/nord-vim', as = 'nord' })
-  use({ 'Mofiqul/vscode.nvim', as = 'vscode' })
-  use({ 'ayu-theme/ayu-vim', as = 'ayu-vim' })
   use { "catppuccin/nvim", as = "catppuccin" }
 
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -49,16 +44,16 @@ return require('packer').startup(function(use)
   use('junegunn/goyo.vim')
   use('lukas-reineke/indent-blankline.nvim')
 
-  use {
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v3.x',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-      '3rd/image.nvim',              -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
-  }
+  -- use {
+    -- 'nvim-neo-tree/neo-tree.nvim',
+    -- branch = 'v3.x',
+    -- requires = {
+      -- 'nvim-lua/plenary.nvim',
+      -- 'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      -- 'MunifTanjim/nui.nvim',
+      -- '3rd/image.nvim',              -- Optional image support in preview window: See `# Preview Mode` for more information
+    -- }
+  -- }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }

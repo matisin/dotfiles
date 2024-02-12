@@ -22,6 +22,7 @@ require("lazy").setup({
         "catppuccin/nvim",
         as = "catppuccin"
     },
+    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     "theprimeagen/harpoon",
     "mbbill/undotree",
     {
@@ -43,9 +44,9 @@ require("lazy").setup({
     -- Snippets
     { "L3MON4D3/LuaSnip" },
     { "rafamadriz/friendly-snippets" },
+    -- END OF LSP
     "junegunn/goyo.vim",
     "lukas-reineke/indent-blankline.nvim",
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" }
@@ -57,5 +58,17 @@ require("lazy").setup({
     },
     "preservim/nerdcommenter",
     "tpope/vim-fugitive",
-    "rhysd/conflict-marker.vim"
+    "rhysd/conflict-marker.vim",
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+            "3rd/image.nvim",        -- Optional image support in preview window: See `# Preview Mode` for more information
+        }
+    }
+
+    -- { "shortcuts/no-neck-pain.nvim",     version = "*" }
 })

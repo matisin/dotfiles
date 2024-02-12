@@ -1,0 +1,20 @@
+-- require("no-neck-pain").setup({
+    -- width = 140,
+    -- buffers = {
+        -- colors = {
+            -- -- blend = -0.9
+        -- },
+        -- scratchPad = {
+            -- -- set to `false` to
+            -- -- disable auto-saving
+            -- enabled = false,
+            -- fileName = "notes",
+            -- -- set to `nil` to default 
+            -- -- to current working directory
+            -- location = "~/",
+        -- },
+        -- bo = {
+            -- filetype = "md"
+        -- },
+    -- },
+-- })
