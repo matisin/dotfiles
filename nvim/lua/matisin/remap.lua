@@ -35,7 +35,7 @@ vim.keymap.set("t", "<ESC>k", "<C-\\><C-n><C-w>k")
 vim.keymap.set("n", "<leader>tt", ":belowright 20split<Bar>:term<CR>")
 vim.keymap.set("n", "<leader>tv", ":vsplit<Bar>:term<CR>")
 
--- vim.keymap.set('n', '<leader>pv', ':Ex<CR>')
+vim.keymap.set('n', '<leader>pv', ':Ex<CR>')
 
 vim.keymap.set('n', '<leader>tc', ':lua vim.cmd("silent !tmux-toggle-scheme"); GetTheme()<CR>')
 vim.keymap.set('n', '<leader>tp', "<cmd>silent !tmux-toggle-pizza<CR>")
