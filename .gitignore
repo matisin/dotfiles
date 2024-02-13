@@ -1,4 +1,2 @@
 kitty/current-theme.conf
 kitty/kitty.conf.bak
-nvim/plugin/packer_compiled.lua
-nvim/lazy-lock.json

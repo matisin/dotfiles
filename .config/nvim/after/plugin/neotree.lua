@@ -17,6 +17,9 @@ neotree.setup({
         filtered_items = {
             visible = true,
             hide_dotfiles = false,
+            hide_by_name = {
+                '.git',
+            },
         }
     },
     buffers = {
@@ -28,6 +31,4 @@ neotree.setup({
 })
 vim.keymap.set('n', '<leader>pt', ':Neotree toggle<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>pv', ':Neotree<CR>', { noremap = true, silent = true })
--- vim.keymap.set('n', '<leader>gs', ':Neotree float git_status<CR>')
-
--- vim.keymap.set("t", "<ESC>pv", "<C-\\><C-n><Bar>:Neotree<CR>")
+vim.keymap.set('n', '<leader>gss', ':Neotree float git_status<CR>')
