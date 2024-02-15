@@ -30,3 +30,7 @@ vim.g.mapleader = " "
 vim.cmd [[autocmd BufRead,BufNewFile *.tf,*.tfvars set filetype=terraform]]
 
 vim.opt.mouse = ""
+
+vim.api.nvim_exec([[
+  autocmd FileType netrw setlocal number
+]], false)

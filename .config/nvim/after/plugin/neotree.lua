@@ -15,7 +15,7 @@ neotree.setup({
             leave_dirs_open = false,
         },
         filtered_items = {
-            visible = true,
+            visible = false,
             hide_dotfiles = false,
             hide_by_name = {
                 '.git',
@@ -27,7 +27,10 @@ neotree.setup({
             enabled = true,
             leave_dirs_open = false
         }
-    }
+    },
+    -- window = {
+        -- width = 100
+    -- }
 })
 vim.keymap.set('n', '<leader>pt', ':Neotree toggle<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>pv', ':Neotree<CR>', { noremap = true, silent = true })

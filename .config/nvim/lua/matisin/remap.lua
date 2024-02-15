@@ -41,3 +41,5 @@ vim.keymap.set('n', '<leader>tc', ':lua vim.cmd("silent !tmux-toggle-scheme"); G
 vim.keymap.set('n', '<leader>tp', "<cmd>silent !tmux-toggle-pizza<CR>")
 vim.keymap.set('n', '<leader>tg', ':lua GetTheme()<CR>')
 
+vim.keymap.set('n', "<C-l>", "<cmd>bnext<CR>")
+vim.keymap.set('n', "<C-h>", "<cmd>bprevious<CR>")
