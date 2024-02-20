@@ -11,11 +11,12 @@ map ctrl+plus     change_font_size all +2.0
 map ctrl+minus     change_font_size all -2.0
 map ctrl+backspace change_font_size all 0
 background_image    NONE
+max_width 120ch
 background_image_layout centered
 background_tint 0.9
 # wayland_titlebar_color #2E3440
 hide_window_decorations yes 
 # BEGIN_KITTY_THEME
-# Catppuccin-Latte
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME

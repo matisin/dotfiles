@@ -66,9 +66,10 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
-            "3rd/image.nvim",        -- Optional image support in preview window: See `# Preview Mode` for more information
+            "3rd/image.nvim",              -- Optional image support in preview window: See `# Preview Mode` for more information
         },
-    }
+    },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
     -- { "shortcuts/no-neck-pain.nvim",     version = "*" }
 })
