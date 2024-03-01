@@ -107,3 +107,6 @@ eval "$(zoxide init zsh)"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# add Pulumi to the PATH
+export PATH=$PATH:/home/matisin/.pulumi/bin

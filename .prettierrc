@@ -1,0 +1,10 @@
+# .prettierrc
+trailingComma: "es5"
+tabWidth: 4
+semi: false
+singleQuote: true
+overrides:
+  - files: "*.yml"
+    options:
+      tabWidth: 4
+
