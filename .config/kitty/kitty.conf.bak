@@ -16,6 +16,6 @@ window_margin_width 8 420
 background_tint 0.9
 hide_window_decorations yes 
 # BEGIN_KITTY_THEME
-# Catppuccin-Latte
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME
