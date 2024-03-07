@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
-
-eval "$(ssh-agent -s)"
+#!/bin/bash
+eval "$(ssh-agent)"
 ssh-add ~/.ssh/$1
+zsh -i
