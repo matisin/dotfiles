@@ -1,0 +1,89 @@
+* {
+    foreground: #CDD6F4;
+    background: #1E1E2E;
+    secondary: #595959;
+    background-color: @background;
+    text-color:            @foreground;
+}
+
+
+window {
+    font:            "JetBrains Nerd Font 12";
+    background-color:      @background;
+    text-color:            @foreground;
+     width: 600px;
+     border: 2px;
+     border-color: @secondary;
+     height: 50%;
+             border-radius: 10px;
+}
+
+mainbox {
+    background-color:      @background;
+    padding: 20px;
+
+}
+
+entry {
+    placeholder: "Buscar";
+}
+
+listview {
+    font:            "JetBrains Nerd Font 12";
+    text-color:            @foreground;
+    layout:     vertical;
+    spacing:    5px;
+    lines:      5;
+    columns:    2;
+    scrollbar: false;
+}
+
+element-text {
+    background-color: @background;
+    text-color: @foreground;
+}
+element-text.selected {
+    background-color: @foreground;
+    text-color: @background;
+}
+
+element {
+    padding: 5px 5px;
+    children: [ element-text, element-icon ];
+    enabled: true;
+    border-radius: 2px;
+}
+
+element.normal.normal, element.alternate.normal {
+    background-color: @background;
+    text-color:       @foreground;
+}
+
+element.selected.normal {
+    background-color: @foreground;
+    text-color:       @foreground;
+}
+
+element-icon.selected.normal {
+    background-color: @foreground;
+    text-color:       @foreground;
+}
+
+
+prompt {
+  enabled: false;
+
+}
+
+inputbar {
+    children:   [ textbox-prompt-colon,entry,case-indicator ];
+    padding: 0 0 20px 0;
+}
+
+textbox-prompt-colon {
+    enabled: true;
+    expand:     false;
+    str:        "  ";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @foreground;
+}
