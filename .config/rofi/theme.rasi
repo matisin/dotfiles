@@ -8,7 +8,7 @@
 
 
 window {
-    font:            "JetBrains Nerd Font 12";
+    font:            "Overpass Nerd Font 12";
     background-color:      @background;
     text-color:            @foreground;
      width: 600px;
@@ -29,7 +29,7 @@ entry {
 }
 
 listview {
-    font:            "JetBrains Nerd Font 12";
+    font:            "Overpass Nerd Font 12";
     text-color:            @foreground;
     layout:     vertical;
     spacing:    5px;

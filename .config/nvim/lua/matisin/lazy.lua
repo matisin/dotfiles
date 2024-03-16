@@ -20,7 +20,6 @@ require("lazy").setup({
     },
     {
         "catppuccin/nvim",
-        as = "catppuccin"
     },
     { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     "theprimeagen/harpoon",
@@ -53,7 +52,7 @@ require("lazy").setup({
     },
     {
         "matisin/dashboard-nvim",
-        as = "dashboard",
+
         dependencies = { "nvim-tree/nvim-web-devicons" }
     },
     "preservim/nerdcommenter",
@@ -69,7 +68,7 @@ require("lazy").setup({
             "3rd/image.nvim",              -- Optional image support in preview window: See `# Preview Mode` for more information
         },
     },
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     { 'nvimtools/none-ls.nvim',                   dependencies = { 'nvim-lua/plenary.nvim' } },
     {
         "epwalsh/obsidian.nvim",
@@ -103,5 +102,18 @@ require("lazy").setup({
 
             -- see below for full list of options 👇
         },
-    }
+    },
+    {
+  "NeogitOrg/neogit",
+  dependencies = {
+    "nvim-lua/plenary.nvim",         -- required
+    "sindrets/diffview.nvim",        -- optional - Diff integration
+
+    -- Only one of these is needed, not both.
+    "nvim-telescope/telescope.nvim", -- optional
+    "ibhagwan/fzf-lua",              -- optional
+  },
+  config = true
+}
+
 })

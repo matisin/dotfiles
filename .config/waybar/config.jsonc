@@ -1,9 +1,9 @@
 {
     "layer": "top",
-    "height": 32,
+    "height": 36,
     "modules-left": ["hyprland/workspaces" ],
     "modules-center": ["clock"],
-    "modules-right": [ "tray","pulseaudio","backlight", "network","memory","cpu", "battery"],
+    "modules-right": [ "tray","wireplumber","backlight", "network","memory","cpu", "battery"],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -63,26 +63,14 @@
       "format-linked": "󰈀{ifname} (No IP)",
       "format-disconnected": "⚠",
       "format-alt": "{ifname}: {ipaddr}/{cidr}",
-      "tooltip-format": "{essid}: {ipaddr}/{cidr}"
+      "tooltip-format": "{essid}: {ipaddr}/{cidr}",
+      "on-click": "nm-connection-editor"
     },
-    "pulseaudio": {
-        "scroll-step": 0,
-        "format": "{icon}   {volume}%",
-        "format-bluetooth": "{volume}%    {icon}",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": " ",
-        "format-source": "    {volume}%",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+    "wireplumber": {
+        "format": "{volume}% {icon}",
+        "format-muted": "",
+        "on-click": "pavucontrol",
+        "format-icons": ["", "", ""]
     },
      "cpu": {
         "format": " {usage: >3}%",
