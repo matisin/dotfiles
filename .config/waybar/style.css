@@ -7,6 +7,11 @@
     min-height: 0;
 }
 
+tooltip {
+     border-radius: 4px;
+     background: rgba(0, 0, 0, 0.8)
+}
+
 window#waybar {
     /* background: transparent; */
     background-color: transparent;

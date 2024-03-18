@@ -58,7 +58,7 @@
     },
     "network": {
     	"format": "{ifname}",
-	    "format-ethernet": "",
+	    "format-ethernet": "󰈀",
       "format-wifi": "",
       "format-linked": "󰈀{ifname} (No IP)",
       "format-disconnected": "⚠",
