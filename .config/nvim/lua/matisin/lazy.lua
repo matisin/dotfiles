@@ -68,6 +68,7 @@ require("lazy").setup({
             "3rd/image.nvim",              -- Optional image support in preview window: See `# Preview Mode` for more information
         },
     },
+    { 'rebelot/kanagawa.nvim' },
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     { 'nvimtools/none-ls.nvim',                   dependencies = { 'nvim-lua/plenary.nvim' } },
     {

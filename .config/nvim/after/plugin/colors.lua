@@ -1,5 +1,5 @@
 function ColorVim(color)
-    color = color or "catppuccin"
+    color = color or "kanagawa"
 
     -- if vim.g.theme_is_dark == true then
     -- vim.o.background = 'dark'
@@ -48,6 +48,6 @@ function GetTheme()
     vim.cmd([[ hi StatusLineNC guibg=NONE ctermbg=NONE ]])
     vim.cmd([[ hi EndOfBuffer guibg=NONE ctermbg=NONE ]])
 end
+ColorVim()
 
-ColorVim("catppuccin")
 GetTheme()

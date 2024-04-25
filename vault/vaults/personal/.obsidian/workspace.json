@@ -4,81 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "999b353c0299e83e",
+        "id": "a0e06647b33e2a4c",
         "type": "tabs",
         "children": [
           {
-            "id": "3e2711faa7e7fbc0",
+            "id": "59b206f3f9ba6017",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "primera nota en mi teclado dividido.md",
+                "file": "Untitjkjkjled 2hjhjjhkjkjk.md",
                 "mode": "source",
-                "source": false
+                "source": true
               }
             }
           },
           {
-            "id": "64b227cc23d76131",
+            "id": "fa4bb9d3483a7603",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Endpoints de pharmkt.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5733d392a16436fc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2024-04-02.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "aed20bfd7cf3d39d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Se me olvida que me gustaría empezar a usar Obsidian..md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "edc14b39ab81abe1",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.12"
-              }
-            }
-          },
-          {
-            "id": "187da2bf35688650",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Untitled 1.md",
+                "file": "asddsadsasdsadsjkjk.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -145,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Untitled 1.md",
+                "file": "asddsadsasdsadsjkjk.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Untitled 1.md",
+                "file": "asddsadsasdsadsjkjk.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -185,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled 1.md"
+                "file": "asddsadsasdsadsjkjk.md"
               }
             }
           }
@@ -206,13 +160,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "187da2bf35688650",
+  "active": "fa4bb9d3483a7603",
   "lastOpenFiles": [
-    "Untitled 1.md",
-    "Se me olvida que me gustaría empezar a usar Obsidian..md",
-    "2024-04-02.md",
-    "Untitled.md",
+    "asddsadsasdsadsjkjk.md",
+    "Untitjkjkjled 2hjhjjhkjkjk.md",
+    "Untitled 3.md",
+    "primera nota en mi teclado dividido.md",
     "Endpoints de pharmkt.md",
-    "primera nota en mi teclado dividido.md"
+    "2024-04-02.md",
+    "Se me olvida que me gustaría empezar a usar Obsidian..md",
+    "Untitled 1.md",
+    "Untitled.md"
   ]
 }

@@ -13,13 +13,13 @@ if [ "$current_color_scheme" == "default" ]; then
   tmux set -g status-style $dark_style    
   tmux set -g @catppuccin_flavour 'mocha'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-  kitty +kitten themes --reload-in=all Catppuccin-Mocha
+  kitty +kitten themes --reload-in=all Kanagawa
 else
   tmux set -g @catppuccin_flavour 'latte'
   # tmux set -g window-style $light_style
   tmux set -g status-style $light_style  
   gsettings set org.gnome.desktop.interface color-scheme 'default'
-  kitty +kitten themes --reload-in=all Catppuccin-Latte
+  kitty +kitten themes --reload-in=all Kanagawa-light
 fi;
 tmux source-file ~/.tmux.conf
 

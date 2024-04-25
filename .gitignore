@@ -1,3 +1,7 @@
 kitty/current-theme.conf
 kitty/kitty.conf.bak
 .tmux/plugins
+vaults/personal
+vaults/work
+vault/personal
+vault/work
