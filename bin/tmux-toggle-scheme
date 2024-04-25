@@ -3,32 +3,16 @@
 # Toggle the current window (all panes) between light and dark themes.
 set -e
 
-dark_style='fg=#cdd6f4,bg=#1e1e2e'
-light_style='fg=#4c4f69,bg=#eff1f5'
-
 current_color_scheme=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
 
 if [ "$current_color_scheme" == "default" ]; then
-  # tmux set -g window-style $dark_style
-  tmux set -g status-style $dark_style    
-  tmux set -g @catppuccin_flavour 'mocha'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-  kitty +kitten themes --reload-in=all Kanagawa
+  kitty +kitten themes --reload-in=all Rosé Pine
+  ~/.tmux/get-theme.sh
 else
-  tmux set -g @catppuccin_flavour 'latte'
-  # tmux set -g window-style $light_style
-  tmux set -g status-style $light_style  
   gsettings set org.gnome.desktop.interface color-scheme 'default'
-  kitty +kitten themes --reload-in=all Kanagawa-light
+  kitty +kitten themes --reload-in=all Rosé Pine Dawn
+  ~/.tmux/get-theme.sh
 fi;
+
 tmux source-file ~/.tmux.conf
-
-# # Obtener una lista de todas las sesiones de tmux
-# sessions=$(tmux list-sessions -F "#{session_id}")
-
-# # Iterar sobre cada sesión
-# for session_id in $sessions; do
-    # # Enviar las teclas a todas las ventanas de la sesión actual
-    # tmux send-keys -t $session_id ":source ~/.config/nvim/init.lua " C-m
-# done
-

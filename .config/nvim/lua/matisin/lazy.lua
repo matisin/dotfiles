@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    { "rose-pine/neovim", name = "rose-pine" },
     "lewis6991/gitsigns.nvim",
     {
         "nvim-telescope/telescope.nvim",
