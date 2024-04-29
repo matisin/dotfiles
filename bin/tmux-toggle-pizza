@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env sh
 # Ruta del archivo de configuración de Kitty
-config_file="$HOME/.config/kitty/kitty.conf"
+config_file="$HOME/Projects/dotfiles/.config/kitty/current-background.conf"
 
 # Verificar el estado actual de la imagen de fondo
 current_background=$(grep '^background_image[[:space:]]' "$config_file" | awk '{print $2}')

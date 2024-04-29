@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    { "jose-elias-alvarez/null-ls.nvim" },
+    { "norcalli/nvim-colorizer.lua" },
     { "rose-pine/neovim", name = "rose-pine" },
     "lewis6991/gitsigns.nvim",
     {
