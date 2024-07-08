@@ -13,8 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     { "jose-elias-alvarez/null-ls.nvim" },
+    { "nanotee/sqls.nvim" },
     { "norcalli/nvim-colorizer.lua" },
-    { "rose-pine/neovim", name = "rose-pine" },
+    { "rose-pine/neovim",               name = "rose-pine" },
     "lewis6991/gitsigns.nvim",
     {
         "nvim-telescope/telescope.nvim",
@@ -108,16 +109,16 @@ require("lazy").setup({
         },
     },
     {
-  "NeogitOrg/neogit",
-  dependencies = {
-    "nvim-lua/plenary.nvim",         -- required
-    "sindrets/diffview.nvim",        -- optional - Diff integration
+        "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim",  -- required
+            "sindrets/diffview.nvim", -- optional - Diff integration
 
-    -- Only one of these is needed, not both.
-    "nvim-telescope/telescope.nvim", -- optional
-    "ibhagwan/fzf-lua",              -- optional
-  },
-  config = true
-}
+            -- Only one of these is needed, not both.
+            "nvim-telescope/telescope.nvim", -- optional
+            "ibhagwan/fzf-lua",              -- optional
+        },
+        config = true
+    }
 
 })

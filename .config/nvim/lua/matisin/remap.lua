@@ -45,3 +45,5 @@ vim.keymap.set('n', "<C-l>", "<cmd>bnext<CR>")
 vim.keymap.set('n', "<C-h>", "<cmd>bprevious<CR>")
 vim.cmd("autocmd BufReadPre *.js nnoremap <buffer> [[ []%0")
 vim.cmd("autocmd BufReadPre *.js nnoremap <buffer> ]] ][%0")
+vim.g['ftplugin_sql_omni_key'] = '<C-j>'
+
