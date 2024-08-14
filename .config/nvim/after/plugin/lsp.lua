@@ -1,29 +1,12 @@
 local lsp = require('lsp-zero')
 local lsp_config = require('lspconfig')
--- local mason = require('mason')
--- local mason_lsp = require('mason-lspconfig')
-local null_ls = require("null-ls")
--- mason.setup({})
--- mason_lsp.setup({
--- ensure_installed = {
--- 'tsserver',
--- 'eslint',
--- 'sqlls'
--- },
--- handlers = {
--- lsp.default_setup,
--- },
--- })
+
 lsp.preset('recomended')
-local sources = {
-    null_ls.builtins.formatting.djlint.with({
-        extra_args = { "--quiet" },
-        filetypes = { "handlebars" }
-    }),
 
+lsp_config.svelte.setup{}
+lsp_config.jsonls.setup{
+    cmd = { "vscode-json-languageserver", "--stdio" }
 }
-
-null_ls.setup({ sources = sources })
 
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
@@ -46,6 +29,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
     end
 })
+
+lsp_config.ruby_lsp.setup{
+    cmd = { "bundle", "exec", "ruby-lsp" }
+}
+lsp_config.nixd.setup{}
 
 lsp_config.sqls.setup {
     on_attach = function(client, bufnr)
@@ -80,6 +68,8 @@ lsp_config.sqls.setup {
 }
 
 lsp_config.tsserver.setup {}
+
+
 
 lsp_config.lua_ls.setup {
     settings = {

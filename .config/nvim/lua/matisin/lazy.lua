@@ -22,10 +22,12 @@ require("lazy").setup({
         tag = "0.1.4",
         dependencies = { { "nvim-lua/plenary.nvim" } }
     },
+    { "direnv/direnv.vim" },
+
     {
         "catppuccin/nvim",
     },
-    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     "theprimeagen/harpoon",
     "mbbill/undotree",
     {

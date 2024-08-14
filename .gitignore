@@ -5,3 +5,4 @@ vaults/personal
 vaults/work
 vault/personal
 vault/work
+.config/zed/.tmp*

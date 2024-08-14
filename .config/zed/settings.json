@@ -1,0 +1,46 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "theme": "One Dark",
+  "telemetry": {
+    "metrics": false
+  },
+  "terminal" : {
+    "font_family": "ZedMono NFM"
+  },
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "never"
+  },
+  "command_aliases": {
+      "W": "w",
+      "Wq": "wq",
+      "Q": "q"
+  },
+  "preferred_line_length": 120,
+  "soft_wrap": "preferred_line_length",
+  "vertical_scroll_margin": 0,
+  "scrollbar": { "show": "never" },
+  "ui_font_size": 12,
+  "buffer_font_size": 12,
+  "tab_size": 4,
+  "hard_tabs": false,
+  "auto_update": false,
+  "relative_line_numbers": true,
+  "format_on_save": false,
+  "ensure_final_newline_on_save": false,
+  "languages":{
+    "TypeScript": {
+      "language_servers": ["typescript-language-server"],
+      "prettier": {
+        "allowed": false
+      }
+    }
+  }
+}
