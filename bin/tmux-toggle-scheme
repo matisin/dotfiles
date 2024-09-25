@@ -4,15 +4,33 @@
 set -e
 
 current_color_scheme=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
+if [[ -z "$TMUX" ]]; then
+  ~/.tmux/get-theme.sh
+fi
+
 
 if [ "$current_color_scheme" == "default" ]; then
+  gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   kitty +kitten themes --reload-in=all Rosé Pine
-  ~/.tmux/get-theme.sh
+
+  hyprctl hyprpaper wallpaper "DP-1,/home/matisin/.config/hypr/wallpaper-dark.jpg"
+  hyprctl hyprpaper wallpaper "eDP-1,/home/matisin/.config/hypr/wallpaper-dark.jpg"
+  hyprctl hyprpaper wallpaper "HDMI-A-1,/home/matisin/.config/hypr/wallpaper-dark.jpg"
 else
+  gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
   gsettings set org.gnome.desktop.interface color-scheme 'default'
   kitty +kitten themes --reload-in=all Rosé Pine Dawn
-  ~/.tmux/get-theme.sh
+
+  hyprctl hyprpaper wallpaper "DP-1,/home/matisin/.config/hypr/wallpaper-light.jpg"
+  hyprctl hyprpaper wallpaper "eDP-1,/home/matisin/.config/hypr/wallpaper-light.jpg"
+  hyprctl hyprpaper wallpaper "HDMI-A-1,/home/matisin/.config/hypr/wallpaper-light.jpg"
 fi;
 
-tmux source-file ~/.tmux.conf
+
+if [[ -z "$TMUX" ]]; then
+  tmux list-panes -a -F '#{pane_id} #{pane_current_command}' | \
+    awk '$2 == "nvim" {print $1}' | \
+    xargs -I {} tmux send-keys -t {} ':lua GetTheme()' Enter
+  tmux source-file ~/.tmux.conf 
+fi

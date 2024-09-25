@@ -80,6 +80,13 @@
         "format": "  {: >3}%",
         "on-click": "footclient -T waybar_btop -e btop"
     },
+    "custom/clipboard": {
+        "exec": "wl-paste -l | tail -n 10 | rofi -dmenu -p \"Clipboard\"",
+        "interval": 10,
+        "tooltip": false
+    }
+}
+
     // "temperature": {
         // "critical-threshold": 80,
         // "format-critical": " {temperatureC}°C",
@@ -87,4 +94,4 @@
         // "tooltip-format": "{temperatureC}° Celsius\n{temperatureF}° Fahrenheit\n{temperatureK}° Kelvin",
         // "on-click": "footclient -T waybar_btop -e btop"
     // }, 
-}
+// }

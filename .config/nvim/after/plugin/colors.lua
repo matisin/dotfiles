@@ -50,6 +50,7 @@ function GetTheme()
     -- vim.cmd([[ hi StatusLineNC guibg=NONE ctermbg=NONE ]])
     -- vim.cmd([[ hi EndOfBuffer guibg=NONE ctermbg=NONE ]])
 end
+
 ColorVim()
 
 GetTheme()

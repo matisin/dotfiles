@@ -3,7 +3,25 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/Projects ~/Projects/pharmkt  ~/Projects/pharmkt/microservices ~/Project/services ~/.config/nvim -mindepth 1 -maxdepth 2 -type d | fzf)
+    # Directorios para el segundo comando
+    no_depth_dirs=(
+        ~/Projects/trikaw/dev-stack 
+        ~/Projects/buk/buk-webapp 
+        ~/Projects/buk/buk-webapp/packs/plataforma/building_blocks/fiji
+    )
+
+    depth_dirs=(
+        ~/Projects
+        ~/Projects/trikaw/dev-stack
+    )
+
+    # Comando combinado
+    selected=$(
+    {
+        find "${depth_dirs[@]}" -maxdepth 1 -type d
+        find "${no_depth_dirs[@]}" -mindepth 0 -maxdepth 0 -type d
+    } | fzf
+)
 fi
 
 if [[ -z $selected ]]; then
@@ -20,7 +38,9 @@ fi
 
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $selected
-    tmux send-keys -t $selected_name C-z 'nvim .' Enter
+    if [[ $selected_name != $USER ]]; then
+        tmux send-keys -t $selected_name C-z 'nvim .' Enter
+    fi
 fi
 
 tmux switch-client -t $selected_name

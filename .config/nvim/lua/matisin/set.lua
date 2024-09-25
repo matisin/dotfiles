@@ -34,3 +34,5 @@ vim.opt.mouse = ""
 vim.api.nvim_exec([[
   autocmd FileType netrw setlocal number
 ]], false)
+
+-- vim.lsp.inlay_hint.enable(bufnr, true)

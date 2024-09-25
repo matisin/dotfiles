@@ -3,10 +3,11 @@ local lsp_config = require('lspconfig')
 
 lsp.preset('recomended')
 
-lsp_config.svelte.setup{}
-lsp_config.jsonls.setup{
+lsp_config.jsonls.setup {
     cmd = { "vscode-json-languageserver", "--stdio" }
 }
+
+vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
@@ -30,10 +31,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
-lsp_config.ruby_lsp.setup{
+lsp_config.ruby_lsp.setup {
     cmd = { "bundle", "exec", "ruby-lsp" }
 }
-lsp_config.nixd.setup{}
 
 lsp_config.sqls.setup {
     on_attach = function(client, bufnr)
@@ -67,10 +67,6 @@ lsp_config.sqls.setup {
     },
 }
 
-lsp_config.tsserver.setup {}
-
-
-
 lsp_config.lua_ls.setup {
     settings = {
         lua = {
@@ -97,20 +93,27 @@ lsp_config.lua_ls.setup {
         },
     },
 }
-lsp_config.gopls.setup {}
 -- lsp_config.yamlls.setup({
--- on_attach = function(client)
--- if client.resolved_capabilities.document_formatting then
--- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)")
--- end
--- end,
--- settings = {
--- yaml = {
--- format = {
--- enable = true,
--- prettier = true
--- }
--- }
--- }
+    -- on_attach = function(client)
+        -- if client.resolved_capabilities.document_formatting then
+            -- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)")
+        -- end
+    -- end,
+    -- settings = {
+        -- yaml = {
+            -- format = {
+                -- enable = true,
+                -- prettier = true
+            -- }
+        -- }
+    -- }
 -- })
+
+lsp_config.marksman.setup {}
+lsp_config.svelte.setup {}
+lsp_config.ts_ls.setup {}
+lsp_config.gopls.setup {}
+lsp_config.nixd.setup {}
+lsp_config.jdtls.setup {}
+
 lsp.setup()

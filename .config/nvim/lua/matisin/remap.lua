@@ -47,3 +47,5 @@ vim.cmd("autocmd BufReadPre *.js nnoremap <buffer> [[ []%0")
 vim.cmd("autocmd BufReadPre *.js nnoremap <buffer> ]] ][%0")
 vim.g['ftplugin_sql_omni_key'] = '<C-j>'
 
+
+vim.env.GEM_HOME = "/home/matisin/Projects/buk/buk-webapp/.gems"
