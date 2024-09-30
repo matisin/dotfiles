@@ -1,9 +1,20 @@
 {
     "layer": "top",
     "height": 36,
-    "modules-left": ["hyprland/workspaces" ],
-    "modules-center": ["clock"],
-    "modules-right": [ "tray","wireplumber","backlight", "network","memory","cpu", "battery"],
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "wireplumber",
+        "backlight",
+        "memory",
+        "cpu",
+        "battery"
+    ],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -15,31 +26,37 @@
             "4": "4: 󱂛",
             "5": "5: 󰝚",
             "6": "6: ",
-            "7":  "7: ",
-            "8":  "8: ",
-            "9":  "9: ",
+            "7": "7: ",
+            "8": "8: ",
+            "9": "9: ",
             "10": "10: undefined"
         }
     },
     "tray": {
         "spacing": 10
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}",
-        "format": "{:%a %d de %b %H:%M}" 
-
+        "format": "{:%a %d de %b %H:%M}"
     },
     "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": ["","","","","","","","","","","","","󰽢"]
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "󰽢"
+        ]
     },
     "battery": {
         "bat": "BAT0",
@@ -48,50 +65,53 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}  {capacity}%",
+        "format": "{icon} {capacity}%",
         "format-icons": {
-            "default": ["󰂃","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󱟢"],
-            "plugged" : "󱧥",
-            "charging": ["󰢜","󰂆","󰂇","󰂈","󰢝","󰂉","󰢞","󰂊","󰂋","󰂅"],
+            "default": [
+                "󰂃",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󱟢"
+            ],
+            "plugged": "󱧥",
+            "charging": [
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ],
             "full": "󱟢  "
         }
     },
-    "network": {
-    	"format": "{ifname}",
-	    "format-ethernet": "󰈀",
-      "format-wifi": "",
-      "format-linked": "󰈀{ifname} (No IP)",
-      "format-disconnected": "⚠",
-      "format-alt": "{ifname}: {ipaddr}/{cidr}",
-      "tooltip-format": "{essid}: {ipaddr}/{cidr}",
-      "on-click": "nm-connection-editor"
-    },
     "wireplumber": {
-        "format": "{volume}% {icon}",
+        "format": "{icon} {volume}%",
         "format-muted": "",
         "on-click": "pavucontrol",
-        "format-icons": ["", "", ""]
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
     },
-     "cpu": {
+    "cpu": {
         "format": " {usage: >3}%",
         "on-click": "footclient -T waybar_btop -e btop"
     },
     "memory": {
         "format": "  {: >3}%",
         "on-click": "footclient -T waybar_btop -e btop"
-    },
-    "custom/clipboard": {
-        "exec": "wl-paste -l | tail -n 10 | rofi -dmenu -p \"Clipboard\"",
-        "interval": 10,
-        "tooltip": false
     }
 }
-
-    // "temperature": {
-        // "critical-threshold": 80,
-        // "format-critical": " {temperatureC}°C",
-        // "format": " {temperatureC}°C",
-        // "tooltip-format": "{temperatureC}° Celsius\n{temperatureF}° Fahrenheit\n{temperatureK}° Kelvin",
-        // "on-click": "footclient -T waybar_btop -e btop"
-    // }, 
-// }
