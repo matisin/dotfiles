@@ -1,27 +1,19 @@
-* {
-    foreground: #CDD6F4;
-    background: #1E1E2E;
-    secondary: #595959;
-    background-color: @background;
-    text-color:            @foreground;
-}
-
+@import "dark"
 
 window {
     font:            "Overpass Nerd Font 12";
-    background-color:      @background;
-    text-color:            @foreground;
-     width: 600px;
-     border: 2px;
-     border-color: @secondary;
-     height: 50%;
-             border-radius: 10px;
+    background-color: @base;
+    text-color: @text;
+    width: 600px;
+    border: 2px;
+    border-color: rgba(0,0,0,0.2);
+    height: 50%;
+    border-radius: 10px;
 }
 
 mainbox {
-    background-color:      @background;
+    background-color: @base;
     padding: 20px;
-
 }
 
 entry {
@@ -29,9 +21,9 @@ entry {
 }
 
 listview {
-    font:            "Overpass Nerd Font 12";
-    text-color:            @foreground;
-    layout:     vertical;
+    font: "Overpass Nerd Font 12";
+    text-color: @text;
+    layout: vertical;
     spacing:    5px;
     lines:      5;
     columns:    2;
@@ -39,12 +31,13 @@ listview {
 }
 
 element-text {
-    background-color: @background;
-    text-color: @foreground;
+    background-color: @base;
+    text-color: @text;
 }
+
 element-text.selected {
-    background-color: @foreground;
-    text-color: @background;
+    background-color: @gold;
+    text-color: @surface;
 }
 
 element {
@@ -55,18 +48,18 @@ element {
 }
 
 element.normal.normal, element.alternate.normal {
-    background-color: @background;
-    text-color:       @foreground;
+    background-color: @base;
+    text-color:       @text;
 }
 
 element.selected.normal {
-    background-color: @foreground;
-    text-color:       @foreground;
+    background-color: @gold;
+    text-color:       @text;
 }
 
 element-icon.selected.normal {
-    background-color: @foreground;
-    text-color:       @foreground;
+    background-color: @gold;
+    text-color:       @text;
 }
 
 
@@ -85,5 +78,5 @@ textbox-prompt-colon {
     expand:     false;
     str:        "  ";
     margin:     0px 0.3em 0em 0em ;
-    text-color: @foreground;
+    text-color: @text;
 }
