@@ -50,24 +50,23 @@
     browser = /usr/bin/firefox -new-tab
     corner_radius = 5
 
-
 [log_notifs]
     script = ~/bin/dunst-logger
 
 [urgency_low]
-    background = "#191724"
-    foreground = "#e0def4"
-    frame_color = "#908caa"
+    background = "#faf4ed"
+    foreground = "#575279"
+    frame_color= "#797593"
     timeout = 10
 
 [urgency_normal]
-    background = "#ebbcba"
-    foreground = "#191724"
-    frame_color = "#ebbcba"
+    background = "#ea9d34"
+    foreground = "#faf4ed"
+    frame_color= "#ea9d34"
     timeout = 15
 
 [urgency_critical]
-    background = "#eb6f92"
-    foreground = "#191724"
-    frame_color = "#eb6f92"
+    background = "#b4637a"
+    foreground = "#faf4ed"
+    frame_color= "#b4637a"
     timeout = 20

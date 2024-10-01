@@ -1,4 +1,4 @@
-@import "dark"
+@import "light"
 
 window {
     font:            "Overpass Nerd Font 12";
@@ -36,7 +36,7 @@ element-text {
 }
 
 element-text.selected {
-    background-color: @gold;
+    background-color: @iris;
     text-color: @surface;
 }
 
@@ -53,12 +53,12 @@ element.normal.normal, element.alternate.normal {
 }
 
 element.selected.normal {
-    background-color: @gold;
+    background-color: @iris;
     text-color:       @text;
 }
 
 element-icon.selected.normal {
-    background-color: @gold;
+    background-color: @iris;
     text-color:       @text;
 }
 

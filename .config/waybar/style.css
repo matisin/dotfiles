@@ -1,4 +1,4 @@
-@import url("dark.css");
+@import url("light.css");
 
 * {
     border: none;
@@ -9,12 +9,14 @@
 }
 
 #custom-launcher {
+    margin: 5px 5px;
+    margin-right: 0px;
+
+    border-radius: 5px;
     padding: 2px 12px 2px 12px;
     color: @base;
     min-width: 40px;
     background-color: @iris;
-
-    border-radius: 10px 0px 0px 10px;
 }
 
 window#waybar {
@@ -22,6 +24,7 @@ window#waybar {
 }
 
 window#waybar>box {
+    min-height: 38px;
     border-radius: 10px;
     background-color: @highlight-high;
     margin: 12px 12px 12px 12px;
@@ -35,11 +38,16 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-#workspaces button {
-    padding: 2px 10px 2px 10px;
+#workspaces {
+    margin: 5px 5px;
+    border-radius: 5px;
     background-color: @overlay;
     color: @text;
-    margin: 0px;
+}
+
+#workspaces button {
+    padding: 2px 10px 2px 10px;
+    background: transparent;
 }
 
 #workspaces button:hover {
@@ -72,23 +80,29 @@ window#waybar.hidden {
 }
 
 #clock.clock {
+    margin: 5px 0px;
     padding: 0px 10px 0px 0px;
-    /* border-radius: 0px 5px 5px 0px; */
+    border-radius: 0px 5px 5px 0px;
     /* background-color: @base */
 }
 
 #clock.date {
+    margin: 5px 0px;
     padding: 0px 5px 0px 10px;
-    /* border-radius: 5px 0px 0px 5px; */
+    border-radius: 5px 0px 0px 5px;
     /* background-color: @base */
 }
 
 #tray {
+    margin: 5px 2px;
+    border-radius: 5px;
     /* -gtk-icon-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9); */
     background-color: @muted;
 }
 
 #wireplumber {
+    margin: 5px 2px;
+    border-radius: 5px;
     /* position: absolute; */
     /* right: 10px; */
     background-color: @gold;
@@ -96,16 +110,22 @@ window#waybar.hidden {
 }
 
 #memory {
-    background-color: @base;
-    color: @text;
+    margin: 5px 2px;
+    border-radius: 5px;
+    background-color: @rose;
+    color: @base;
 }
 
 #cpu {
-    background-color: @highlight-med;
-    color: @text;
+    margin: 5px 2px;
+    border-radius: 5px;
+    background-color: @foam;
+    color: @base;
 }
 
 #backlight {
+    margin: 5px 2px;
+    border-radius: 5px;
     background-color: @overlay;
 }
 

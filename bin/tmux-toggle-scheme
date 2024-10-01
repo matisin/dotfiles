@@ -21,6 +21,9 @@ if [ "$current_color_scheme" == "default" ]; then
   sed -i 's/@import url("light.css");/@import url("dark.css");/' "$WAYBAR_STYLE_FILE"
   sed -i 's/@import "light"/@import "dark"/' "$ROFI_STYLE_FILE"
 
+  pkill dunst
+  dunst &
+
 
   hyprctl hyprpaper wallpaper ",/home/matisin/.config/hypr/wallpaper-dark.jpg"
 else
@@ -29,6 +32,9 @@ else
   kitty +kitten themes --reload-in=all Rosé Pine Dawn
   sed -i 's/@import url("dark.css");/@import url("light.css");/' "$WAYBAR_STYLE_FILE"
   sed -i 's/@import "dark"/@import "light"/' "$ROFI_STYLE_FILE"
+
+  pkill dunst
+  dunst -conf ~/.config/dunst/dunstrc_light &
 
   hyprctl hyprpaper wallpaper ",/home/matisin/.config/hypr/wallpaper-light.jpg"
 fi;
