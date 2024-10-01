@@ -1,20 +1,49 @@
+@define-color base #191724;
+@define-color surface #1f1d2e;
+@define-color overlay #26233a;
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color text #e0def4;
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ebbcba;
+@define-color pine #31748f;
+@define-color iris #c4a7e7;
+@define-color foam #9ccfd8;
+@define-color highlight-low #21202e;
+@define-color highlight-med #403d52;
+@define-color highlight-high #524f67;
+
+
 * {
     border: none;
     border-radius: 0;
     font-family: Overpass Nerd Font;
     font-weight: bold;
     font-size: 16px;
-    min-height: 0;
 }
 
+#custom-launcher {
+    padding: 2px 12px 2px 12px;
+    color: @base;
+    min-width: 40px;
+    background-color: @iris;
+
+    border-radius: 10px 0px 0px 10px;
+}
 
 window#waybar {
     background-color: transparent;
-    color: #fff;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9);
-    border-bottom: none;
+}
+
+window#waybar>box {
+    border-radius: 10px;
+    background-color: @highlight-high;
+    margin: 12px 12px 12px 12px;
+    color: @text;
     transition-property: background-color;
     transition-duration: 0.5s;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
 }
 
 window#waybar.hidden {
@@ -22,52 +51,75 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    padding: 2px 12px 2px 5px;
-    color: #fff;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9);
-    margin: 4px;
-    border-radius: 3px;
+    padding: 2px 10px 2px 10px;
+    background-color: @base;
+    color: @text;
+    margin: 0px;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: inherit;
-    border-bottom: none;
-    border-radius: 20px;
+    color: @foam;
 }
 
 #workspaces button.focused {
-    background-color: #a5aebb;
-    color: #fff;
-    border-bottom: none;
-    border-radius: 5px;
+    color: @gold;
 }
 
 #workspaces button.active {
-    background: rgba(0, 0, 0, 0.5);
+    color: @gold;
 }
 
 #workspaces button.urgent {
-    background-color: #2c303c;
+    color: @love;
 }
 
-#clock,
-/* #tray, */
 #wireplumber,
-#backlight,
+#memory,
 #cpu,
 #battery,
-#memory {
-    margin: 2px 4px;
-    padding: 2px 3px;
-    color: #fff;
-    /* Texto en blanco */
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9);
-    /* Sombra de texto en negro */
+#tray,
+#backlight {
+    padding: 0px 9px;
+}
+
+#clock {
+    background-color: @overlay;
+}
+
+#clock.clock {
+    padding: 0px 10px 0px 0px;
+    /* border-radius: 0px 5px 5px 0px; */
+    /* background-color: @base */
+}
+
+#clock.date {
+    padding: 0px 5px 0px 10px;
+    /* border-radius: 5px 0px 0px 5px; */
+    /* background-color: @base */
 }
 
 #tray {
     -gtk-icon-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9);
+    background-color: @muted;
+}
+
+#wireplumber {
+    /* position: absolute; */
+    /* right: 10px; */
+    background-color: @gold;
+    color: @base;
+}
+
+#memory {
+    background-color: @base;
+}
+
+#cpu {
+    background-color: @muted;
+}
+
+#backlight {
+    background-color: @overlay;
 }
 
 @keyframes blink {
@@ -85,17 +137,13 @@ window#waybar.hidden {
     animation-direction: alternate;
 }
 
-label:focus {
-    background-color: #1f2329;
+tooltip {
+    /* background: rgba(43, 48, 59, 0.5); */
+    border: 1px solid rgba(100, 114, 125, 0.5);
+    /* border-radius: 10px; */
 }
 
-tooltip   {
-    border-radius: 4px;
-    /* border: 2px red;  */
-    padding: 2px;
-
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
-    /* background: rgba(0, 0, 0, 0.8); */
-    /* color: #fff; */
-    /* padding: 10px; */
+tooltip label {
+    padding: 5px;
+    /* color: @text; */
 }

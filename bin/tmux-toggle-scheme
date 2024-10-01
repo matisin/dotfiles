@@ -3,6 +3,47 @@
 # Toggle the current window (all panes) between light and dark themes.
 set -e
 
+# Ruta al archivo de tema (reemplaza esto con la ruta real)
+THEME_FILE="/home/matisin/Projects/dotfiles/.config/waybar/style.css"
+
+# Función para cambiar al tema claro
+set_light_theme() {
+    sed -i '1,15s/@define-color base #[0-9a-fA-F]\{6\}/@define-color base #faf4ed/' "$THEME_FILE"
+    sed -i '1,15s/@define-color surface #[0-9a-fA-F]\{6\}/@define-color surface #fffaf3/' "$THEME_FILE"
+    sed -i '1,15s/@define-color overlay #[0-9a-fA-F]\{6\}/@define-color overlay #f2e9e1/' "$THEME_FILE"
+    sed -i '1,15s/@define-color muted #[0-9a-fA-F]\{6\}/@define-color muted #9893a5/' "$THEME_FILE"
+    sed -i '1,15s/@define-color subtle #[0-9a-fA-F]\{6\}/@define-color subtle #797593/' "$THEME_FILE"
+    sed -i '1,15s/@define-color text #[0-9a-fA-F]\{6\}/@define-color text #575279/' "$THEME_FILE"
+    sed -i '1,15s/@define-color love #[0-9a-fA-F]\{6\}/@define-color love #b4637a/' "$THEME_FILE"
+    sed -i '1,15s/@define-color gold #[0-9a-fA-F]\{6\}/@define-color gold #ea9d34/' "$THEME_FILE"
+    sed -i '1,15s/@define-color rose #[0-9a-fA-F]\{6\}/@define-color rose #d7827e/' "$THEME_FILE"
+    sed -i '1,15s/@define-color pine #[0-9a-fA-F]\{6\}/@define-color pine #286983/' "$THEME_FILE"
+    sed -i '1,15s/@define-color iris #[0-9a-fA-F]\{6\}/@define-color iris #907aa9/' "$THEME_FILE"
+    sed -i '1,15s/@define-color foam #[0-9a-fA-F]\{6\}/@define-color foam #56949f/' "$THEME_FILE"
+    sed -i '1,15s/@define-color highlight-low #[0-9a-fA-F]\{6\}/@define-color highlight-low #f4ede8/' "$THEME_FILE"
+    sed -i '1,15s/@define-color highlight-med #[0-9a-fA-F]\{6\}/@define-color highlight-med #dfdad9/' "$THEME_FILE"
+    sed -i '1,15s/@define-color highlight-high #[0-9a-fA-F]\{6\}/@define-color highlight-high #cecacd/' "$THEME_FILE"
+}
+
+# Función para cambiar al tema oscuro
+set_dark_theme() {
+    sed -i '1,15s/@define-color base #[0-9a-fA-F]\{6\}/@define-color base #191724/' "$THEME_FILE"
+    sed -i '1,15s/@define-color surface #[0-9a-fA-F]\{6\}/@define-color surface #1f1d2e/' "$THEME_FILE"
+    sed -i '1,15s/@define-color overlay #[0-9a-fA-F]\{6\}/@define-color overlay #26233a/' "$THEME_FILE"
+    sed -i '1,15s/@define-color muted #[0-9a-fA-F]\{6\}/@define-color muted #6e6a86/' "$THEME_FILE"
+    sed -i '1,15s/@define-color subtle #[0-9a-fA-F]\{6\}/@define-color subtle #908caa/' "$THEME_FILE"
+    sed -i '1,15s/@define-color text #[0-9a-fA-F]\{6\}/@define-color text #e0def4/' "$THEME_FILE"
+    sed -i '1,15s/@define-color love #[0-9a-fA-F]\{6\}/@define-color love #eb6f92/' "$THEME_FILE"
+    sed -i '1,15s/@define-color gold #[0-9a-fA-F]\{6\}/@define-color gold #f6c177/' "$THEME_FILE"
+    sed -i '1,15s/@define-color rose #[0-9a-fA-F]\{6\}/@define-color rose #ebbcba/' "$THEME_FILE"
+    sed -i '1,15s/@define-color pine #[0-9a-fA-F]\{6\}/@define-color pine #31748f/' "$THEME_FILE"
+    sed -i '1,15s/@define-color iris #[0-9a-fA-F]\{6\}/@define-color iris #c4a7e7/' "$THEME_FILE"
+    sed -i '1,15s/@define-color foam #[0-9a-fA-F]\{6\}/@define-color foam #9ccfd8/' "$THEME_FILE"
+    sed -i '1,15s/@define-color highlight-low #[0-9a-fA-F]\{6\}/@define-color highlight-low #21202e/' "$THEME_FILE"
+    sed -i '1,15s/@define-color highlight-med #[0-9a-fA-F]\{6\}/@define-color highlight-med #403d52/' "$THEME_FILE"
+    sed -i '1,15s/@define-color highlight-high #[0-9a-fA-F]\{6\}/@define-color highlight-high #524f67/' "$THEME_FILE"
+}
+
 current_color_scheme=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
 if [[ -z "$TMUX" ]]; then
   ~/.tmux/get-theme.sh
@@ -13,12 +54,14 @@ if [ "$current_color_scheme" == "default" ]; then
   gsettings set org.gnome.desktop.interface gtk-theme 'rose-pine'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   kitty +kitten themes --reload-in=all Rosé Pine
+  set_dark_theme
 
   hyprctl hyprpaper wallpaper ",/home/matisin/.config/hypr/wallpaper-dark.jpg"
 else
   gsettings set org.gnome.desktop.interface gtk-theme 'rose-pine-dawn'
   gsettings set org.gnome.desktop.interface color-scheme 'default'
   kitty +kitten themes --reload-in=all Rosé Pine Dawn
+  set_light_theme
 
   hyprctl hyprpaper wallpaper ",/home/matisin/.config/hypr/wallpaper-light.jpg"
 fi;
