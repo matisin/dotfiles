@@ -20,7 +20,7 @@
     text_icon_padding = 0
     frame_width = 1
     separator_color = frame
-    sort = yes
+    sort = false
     font = Cousine Nerd Font Mono Regular 13
     line_height = 1
     markup = full
@@ -31,7 +31,6 @@
     word_wrap = no
     ellipsize = middle
     ignore_newline = no
-    stack_duplicates = true
     hide_duplicate_count = false
     show_indicators = yes
     icon_position = left
@@ -49,6 +48,7 @@
     mouse_right_click = close_all
     browser = /usr/bin/firefox -new-tab
     corner_radius = 5
+    stack_duplicates = false
 
 [log_notifs]
     script = ~/bin/dunst-logger

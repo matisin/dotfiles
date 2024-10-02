@@ -1,4 +1,4 @@
-@import "light"
+@import "dark"
 
 window {
     font:            "Overpass Nerd Font 12";

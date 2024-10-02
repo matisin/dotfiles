@@ -20,7 +20,7 @@
     text_icon_padding = 0
     frame_width = 1
     separator_color = frame
-    sort = yes
+    sort = false
     font = Cousine Nerd Font Mono Regular 13
     line_height = 1
     markup = full
@@ -31,14 +31,13 @@
     word_wrap = no
     ellipsize = middle
     ignore_newline = no
-    stack_duplicates = true
     hide_duplicate_count = false
     show_indicators = yes
     icon_position = left
     min_icon_size = 0
     max_icon_size = 72
     enable_recursive_icon_lookup = true
-    sticky_history = yes
+    sticky_history = no
     history_length = 20
     always_run_script = true
     title = Dunst
@@ -49,6 +48,7 @@
     mouse_right_click = close_all
     browser = /usr/bin/firefox -new-tab
     corner_radius = 5
+    stack_duplicates = false
 
 
 [log_notifs]
