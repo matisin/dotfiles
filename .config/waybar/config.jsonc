@@ -2,7 +2,7 @@
     "reload_style_on_change": true,
     "layer": "top",
     "height": 36,
-    "margin": "4",
+    "margin": "0",
     "modules-left": [
         "custom/launcher",
         "hyprland/workspaces"
@@ -20,7 +20,7 @@
         "battery"
     ],
     "custom/launcher": {
-        "format": "",
+        "format": " ",
         "on-click": "rofi -show drun",
         "tooltip": false
     },
@@ -29,15 +29,15 @@
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-            "1": "1: ",
-            "2": "2: ",
-            "3": "3: ",
-            "4": "4: 󱂛",
-            "5": "5: 󰝚",
-            "6": "6: ",
-            "7": "7: ",
-            "8": "8: ",
-            "9": "9: ",
+            "1": "1:  ",
+            "2": "2:  ",
+            "3": "3:  ",
+            "4": "4: 󱂛 ",
+            "5": "5: 󰝚 ",
+            "6": "6:  ",
+            "7": "7:  ",
+            "8": "8:  ",
+            "9": "9:  ",
             "10": "10: undefined"
         }
     },
@@ -120,7 +120,7 @@
         ]
     },
     "cpu": {
-        "format": "  {avg_frequency:0.1f}GHz  {usage}%",
+        "format": "  {avg_frequency:0.1f}GHz / {usage}%",
         "on-click": "footclient -T waybar_btop -e btop"
     },
     "memory": {

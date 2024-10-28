@@ -1,37 +1,34 @@
-@import url("dark.css");
+@import url("light.css");
 
 * {
     border: none;
     border-radius: 0;
-    font-family: Overpass Nerd Font;
+    font-family: JetBrainsMono Nerd Font;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
+    min-height: 0px;
 }
 
 #custom-launcher {
-    margin: 5px 5px;
-    margin-right: 0px;
-
-    border-radius: 5px;
-    padding: 2px 12px 2px 12px;
+    padding: 4px 17px 4px 20px;
     color: @base;
-    min-width: 40px;
     background-color: @iris;
+}
+
+#custom-launcher:hover {
+    color: @base;
+    background-color: @foam;
 }
 
 window#waybar {
     background-color: transparent;
+    color: @text;
 }
 
 window#waybar>box {
-    min-height: 38px;
-    border-radius: 10px;
-    background-color: @highlight-high;
-    margin: 12px 12px 12px 12px;
-    color: @text;
     transition-property: background-color;
     transition-duration: 0.5s;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+    background-color: @base;
 }
 
 window#waybar.hidden {
@@ -39,19 +36,18 @@ window#waybar.hidden {
 }
 
 #workspaces {
-    margin: 5px 5px;
     border-radius: 5px;
-    background-color: @overlay;
     color: @text;
 }
 
 #workspaces button {
-    padding: 2px 10px 2px 10px;
+    padding: 0px 10px;
     background: transparent;
 }
 
 #workspaces button:hover {
-    color: @foam;
+    color: @text;
+    background-color: @overlay;
 }
 
 #workspaces button.focused {
@@ -59,7 +55,8 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-    color: @rose;
+    background-color: @highlight-med;
+    color: @text;
 }
 
 #workspaces button.urgent {
@@ -72,60 +69,21 @@ window#waybar.hidden {
 #battery,
 #tray,
 #backlight {
-    padding: 0px 9px;
+    padding: 0px 10px;
 }
 
-#clock {
-    background-color: @overlay;
+#wireplumber:hover,
+#memory:hover,
+#cpu:hover,
+#battery:hover,
+#tray:hover,
+#backlight:hover {
+    background-color: @highlight-med;
 }
 
-#clock.clock {
-    margin: 5px 0px;
-    padding: 0px 10px 0px 0px;
-    border-radius: 0px 5px 5px 0px;
-    /* background-color: @base */
-}
-
-#clock.date {
-    margin: 5px 0px;
-    padding: 0px 5px 0px 10px;
-    border-radius: 5px 0px 0px 5px;
-    /* background-color: @base */
-}
-
-#tray {
-    margin: 5px 2px;
-    border-radius: 5px;
-    /* -gtk-icon-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9); */
-    background-color: @muted;
-}
-
-#wireplumber {
-    margin: 5px 2px;
-    border-radius: 5px;
-    /* position: absolute; */
-    /* right: 10px; */
-    background-color: @gold;
-    color: @base;
-}
-
-#memory {
-    margin: 5px 2px;
-    border-radius: 5px;
-    background-color: @rose;
-    color: @base;
-}
-
-#cpu {
-    margin: 5px 2px;
-    border-radius: 5px;
-    background-color: @foam;
-    color: @base;
-}
-
-#backlight {
-    margin: 5px 2px;
-    border-radius: 5px;
+#wireplumber,
+#memory,
+#battery {
     background-color: @overlay;
 }
 
@@ -146,11 +104,30 @@ window#waybar.hidden {
 
 tooltip {
     /* background: rgba(43, 48, 59, 0.5); */
-    border: 1px solid rgba(100, 114, 125, 0.5);
+    border: 0px;
+    background-color: @overlay;
     /* border-radius: 10px; */
 }
 
 tooltip label {
     padding: 5px;
-    /* color: @text; */
+}
+
+/* #clock.clock { */
+/* [> border-right: 2px solid rgba(0,0,0,0.7); <] */
+/* padding: 0px 10px 0px 0px; */
+/* } */
+
+/* #clock.date { */
+/* [> border-left: 2px solid rgba(0,0,0,0.7); <] */
+/* padding: 0px 5px 0px 10px; */
+/* [> background-color: @base <] */
+/* } */
+
+#clock {
+    padding: 0 10px;
+}
+
+#clock:hover {
+    background-color: @overlay;
 }

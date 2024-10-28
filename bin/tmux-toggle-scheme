@@ -13,9 +13,9 @@ if [[ -z "$TMUX" ]]; then
   ~/.tmux/get-theme.sh
 fi
 
-
 if [ "$current_color_scheme" == "default" ]; then
   gsettings set org.gnome.desktop.interface gtk-theme 'rose-pine'
+  gsettings set org.gnome.desktop.interface icon-theme 'rose-pine'
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
   kitty +kitten themes --reload-in=all Rosé Pine
   sed -i 's/@import url("light.css");/@import url("dark.css");/' "$WAYBAR_STYLE_FILE"
@@ -24,10 +24,10 @@ if [ "$current_color_scheme" == "default" ]; then
   pkill dunst
   dunst &
 
-
   hyprctl hyprpaper wallpaper ",/home/matisin/.config/hypr/wallpaper-dark.jpg"
 else
   gsettings set org.gnome.desktop.interface gtk-theme 'rose-pine-dawn'
+  gsettings set org.gnome.desktop.interface icon-theme 'rose-pine-dawn'
   gsettings set org.gnome.desktop.interface color-scheme 'default'
   kitty +kitten themes --reload-in=all Rosé Pine Dawn
   sed -i 's/@import url("dark.css");/@import url("light.css");/' "$WAYBAR_STYLE_FILE"

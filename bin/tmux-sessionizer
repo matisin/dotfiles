@@ -6,13 +6,13 @@ else
     # Directorios para el segundo comando
     no_depth_dirs=(
         ~/Projects/trikaw/dev-stack 
-        ~/Projects/buk/buk-webapp 
-        ~/Projects/buk/buk-webapp/packs/plataforma/building_blocks/fiji
     )
 
     depth_dirs=(
         ~/Projects
         ~/Projects/trikaw/dev-stack
+        ~/Projects/buk
+        ~/Projects/agendas.cl
     )
 
     # Comando combinado
