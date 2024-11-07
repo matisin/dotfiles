@@ -68,6 +68,7 @@ window#waybar.hidden {
 #cpu,
 #battery,
 #tray,
+#custom-kbdlight,
 #backlight {
     padding: 0px 10px;
 }
@@ -77,13 +78,14 @@ window#waybar.hidden {
 #cpu:hover,
 #battery:hover,
 #tray:hover,
+#custom-kbdlight:hover,
 #backlight:hover {
     background-color: @highlight-med;
 }
 
 #wireplumber,
-#memory,
-#battery {
+#backlight,
+#memory {
     background-color: @overlay;
 }
 
@@ -124,10 +126,12 @@ tooltip label {
 /* [> background-color: @base <] */
 /* } */
 
+#custom-weather,
 #clock {
     padding: 0 10px;
 }
 
+#custom-weather:hover,
 #clock:hover {
     background-color: @overlay;
 }

@@ -9,14 +9,16 @@
     ],
     "modules-center": [
         "clock#date",
+        "custom/weather",
         "clock#clock"
     ],
     "modules-right": [
         "tray",
         "wireplumber",
+        "custom/kbdlight",
         "backlight",
-        "memory",
         "cpu",
+        "memory",
         "battery"
     ],
     "custom/launcher": {
@@ -34,12 +36,26 @@
             "3": "3:  ",
             "4": "4: 󱂛 ",
             "5": "5: 󰝚 ",
-            "6": "6:  ",
+            "6": "6:  ",
             "7": "7:  ",
             "8": "8:  ",
             "9": "9:  ",
             "10": "10: undefined"
         }
+    },
+    "custom/weather": {
+        "format": "{}°",
+        "tooltip": true,
+        "interval": 3600,
+        // "exec": "wttrbar",
+        "exec": "bin/weather.sh",
+        "return-type": "json"
+    },
+    "custom/kbdlight": {
+        "exec": "brightnessctl -d dell::kbd_backlight g | awk '{ print int($1 * 50) }'",
+        "format": "  {}%",
+        "interval": 1,
+        "output": ["eDP-1"]
     },
     "tray": {
         "spacing": 10
@@ -111,7 +127,7 @@
     },
     "wireplumber": {
         "format": "{icon}  {volume}%",
-        "format-muted": "",
+        "format-muted": " ",
         "on-click": "pavucontrol",
         "format-icons": [
             "",

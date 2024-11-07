@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-playerctl -p spotify metadata --format '{{ artist }} - {{ title }}'
+playerctl -a metadata --format "{{ artist }} - {{ title }}"

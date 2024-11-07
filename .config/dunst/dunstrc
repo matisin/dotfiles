@@ -2,6 +2,7 @@
     monitor = 0
     follow = mouse
     width = 400
+    height = 90
     offset = 22x10
     transparency = 10
     origin = top-right
@@ -14,11 +15,11 @@
     indicate_hidden = false
     notification_limit = 0
     shrink = no
-    separator_height = 2
+    separator_height = 5
     padding = 8
     horizontal_padding = 10
     text_icon_padding = 0
-    frame_width = 1
+    frame_width = 3
     separator_color = frame
     sort = false
     font = JetBrainsMono Nerd Font Regular 13
@@ -47,7 +48,7 @@
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
     browser = /usr/bin/firefox -new-tab
-    corner_radius = 0
+    corner_radius = 10
     stack_duplicates = false
 
 
@@ -56,18 +57,18 @@
 
 [urgency_low]
     background = "#26233a"
-    frame_color = "#26233a"
+    frame_color = "#524f67"
     foreground = "#e0def4"
     timeout = 10
 
 [urgency_normal]
     background = "#403d52"
-    frame_color = "#403d52"
+    frame_color = "#524f67"
     foreground = "#e0def4"
     timeout = 15
 
 [urgency_critical]
     background = "#c4a7e7"
     foreground = "#191724"
-    frame_color = "#403d52"
+    frame_color = "#524f67"
     timeout = 20
