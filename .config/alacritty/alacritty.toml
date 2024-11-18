@@ -1,0 +1,30 @@
+import = ["~/.config/alacritty/rose-pine.toml"]
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+size = 10
+
+[window]
+padding = { x = 300, y = 12 }
+decorations = "none"
+opacity = 0.95
+
+[bell]
+duration = 0
+
+[keyboard]
+bindings = [
+   { key = "Plus", mods = "Control", action = "IncreaseFontSize" },
+   { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+   { key = "Back", mods = "Control", action = "ResetFontSize" }
+]
+[env]
+TERM = "alacritty"
+
+[colors]
+transparent_background_colors = true
+
+
+# Esta sección se importará desde otro archivo
+
+# Los colores van en rose-pine.toml separado

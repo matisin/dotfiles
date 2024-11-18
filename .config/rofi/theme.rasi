@@ -1,13 +1,14 @@
-@import "light"
+@import "dark"
 
 window {
     font:            "JetBrainsMono Nerd Font 12";
     background-color: @overlay;
     text-color: @text;
     width: 600px;
-    border: 0px;
-    border-color: 0;
+    border: 3px;
+    border-color: @highlight-high;
     height: 50%;
+    border-radius: 10px;
 }
 
 mainbox {

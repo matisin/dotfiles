@@ -39,7 +39,7 @@ fi
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $selected
     if [[ $selected_name != $USER ]]; then
-        tmux send-keys -t $selected_name C-z 'nvim .' Enter
+        tmux send-keys -t $selected_name C-z 'nvim' Enter
     fi
 fi
 

@@ -114,5 +114,6 @@ lsp_config.jdtls.setup {}
 lsp_config.jsonls.setup {}
 lsp_config.cssls.setup {}
 lsp_config.terraform_lsp.setup{}
+lsp_config.glsl_analyzer.setup{}
 
 lsp.setup()

@@ -7,6 +7,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- vim.keymap.set("n", "j", "v:count == 0 ? 'jzz' : 'jzz'", { expr = true })
+-- vim.keymap.set("n", "k", "v:count == 0 ? 'kzz' : 'kzz'", { expr = true })
+
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -48,5 +51,4 @@ vim.cmd("autocmd BufReadPre *.js nnoremap <buffer> [[ []%0")
 vim.cmd("autocmd BufReadPre *.js nnoremap <buffer> ]] ][%0")
 vim.g['ftplugin_sql_omni_key'] = '<C-j>'
 
-
-vim.env.GEM_HOME = "/home/matisin/Projects/buk/buk-webapp/.gems"
+vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
