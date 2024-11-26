@@ -2,7 +2,7 @@
     monitor = 0
     follow = mouse
     width = 400
-    height = 90
+    height = 180
     offset = 22x10
     transparency = 10
     origin = top-right

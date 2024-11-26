@@ -1,5 +1,5 @@
 font_family JetBrainsMono Nerd Font
-font_size 11
+font_size 10
 bold_font auto
 italic_font auto
 bold_italic_font auto
@@ -10,7 +10,7 @@ update_check_interval 0
 map ctrl+plus     change_font_size all +2.0
 map ctrl+minus     change_font_size all -2.0
 map ctrl+backspace change_font_size all 0
-window_margin_width 8 500
+window_margin_width 8 150
 hide_window_decorations yes 
 # BEGIN_KITTY_THEME
 # Rosé Pine Dawn
