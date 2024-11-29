@@ -11,7 +11,7 @@ else
     depth_dirs=(
         ~/Projects
         ~/Projects/trikaw/dev-stack
-        ~/Projects/buk
+        ~/Projects/buk/bukhr
         ~/Projects/agendas.cl
         ~/Projects/vaults/vaults
     )
