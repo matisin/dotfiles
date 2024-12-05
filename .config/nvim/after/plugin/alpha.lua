@@ -495,8 +495,8 @@ local function week_capybara()
         ["01-01"] = "new_year",
         ["18-09"] = "18",
         ["12-25"] = "christmas",
-        ["12-03"] = "mati_cumple",
-        ["10-05"] = "cumple_jose",
+        ["03-12"] = "mati_cumple",
+        ["05-10"] = "cumple_jose",
     }
 
     -- Obtén la fecha actual en el formato MM-DD

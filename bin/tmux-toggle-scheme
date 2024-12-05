@@ -53,3 +53,12 @@ if [[ -z "$TMUX" ]]; then
     xargs -I {} tmux send-keys -t {} ':lua GetTheme()' Enter
   tmux source-file ~/.tmux.conf 
 fi
+
+kitty_instances=$(pgrep -a -f "kitty" | awk '{print $1}')
+
+# Verificar si se encontraron instancias de Kitty
+if [ -n "$kitty_instances" ]; then
+    for instance in $kitty_instances; do
+        kill -USR1 "$instance"
+    done
+fi
