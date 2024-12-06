@@ -7,7 +7,7 @@ set -e
 WAYBAR_STYLE_FILE="${HOME:-/home/$USER}/.config/waybar/style.css"
 ROFI_STYLE_FILE="${HOME:-/home/$USER}/.config/rofi/theme.rasi"
 HYPRLAND_FILE="${HOME:-/home/$USER}/.config/hypr/hyprland.conf"
-ALACRITTY_FILE="${HOME:-/home/$USER}/.config/alacritty/alacritty.toml"
+CLIPSE_FILE="${HOME:-/home/$USER}/.config/clipse/config.json"
 
 current_color_scheme=$(gsettings get org.gnome.desktop.interface color-scheme | tr -d "'")
 if [[ -z "$TMUX" ]]; then
@@ -28,7 +28,7 @@ if [ "$current_color_scheme" == "default" ]; then
   hyprctl hyprpaper wallpaper ",/home/matisin/.config/hypr/wallpaper-dark.jpg"
   sed -i 's/col\.active_border = rgba(CECACDFF)/col\.active_border = rgba(524f67FF)/' "$HYPRLAND_FILE"
   sed -i 's/col\.inactive_border = rgba(CECACDFF)/col\.inactive_border = rgba(524f67FF)/' "$HYPRLAND_FILE"
-  sed -i 's/import = \["~\/\.config\/alacritty\/rose-pine-dawn\.toml"\]/import = \["~\/\.config\/alacritty\/rose-pine\.toml"\]/' "$ALACRITTY_FILE"
+  sed -i 's/"themeFile": "custom_theme_light/"themeFile": "custom_theme/' "$CLIPSE_FILE"
 
 else
   gsettings set org.gnome.desktop.interface gtk-theme 'rose-pine-dawn'
@@ -44,7 +44,7 @@ else
   hyprctl hyprpaper wallpaper ",/home/matisin/.config/hypr/wallpaper-light.jpg"
   sed -i 's/col\.active_border = rgba(524f67FF)/col\.active_border = rgba(CECACDFF)/' "$HYPRLAND_FILE"
   sed -i 's/col\.inactive_border = rgba(524f67FF)/col\.inactive_border = rgba(CECACDFF)/' "$HYPRLAND_FILE"
-  sed -i 's/import = \["~\/\.config\/alacritty\/rose-pine\.toml"\]/import = \["~\/\.config\/alacritty\/rose-pine-dawn\.toml"\]/' "$ALACRITTY_FILE"
+  sed -i 's/"themeFile": "custom_theme/"themeFile": "custom_theme_light/' "$CLIPSE_FILE"
 fi;
 
 if [[ -z "$TMUX" ]]; then
