@@ -5,15 +5,15 @@ if [[ $# -eq 1 ]]; then
 else
     # Directorios para el segundo comando
     no_depth_dirs=(
-        ~/Projects/trikaw/dev-stack 
+        # ~/Projects/trikaw/dev-stack 
     )
 
     depth_dirs=(
         ~/Projects
-        ~/Projects/trikaw/dev-stack
-        ~/Projects/buk/bukhr
-        ~/Projects/agendas.cl
-        ~/Projects/vaults/vaults
+        # ~/Projects/trikaw/dev-stack
+        # ~/Projects/buk/bukhr
+        # ~/Projects/agendas.cl
+        # ~/Projects/vaults/vaults
     )
 
     # Comando combinado
