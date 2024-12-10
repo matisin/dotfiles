@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 #
+if [[ "$(tmux ls 2>&1)" == *"no server running"* ]]; then
+    tmux &
+fi
+
 # Toggle the current window (all panes) between light and dark themes.
 set -e
 
@@ -29,6 +33,7 @@ if [ "$current_color_scheme" == "default" ]; then
   sed -i 's/col\.active_border = rgba(CECACDFF)/col\.active_border = rgba(524f67FF)/' "$HYPRLAND_FILE"
   sed -i 's/col\.inactive_border = rgba(CECACDFF)/col\.inactive_border = rgba(524f67FF)/' "$HYPRLAND_FILE"
   sed -i 's/"themeFile": "custom_theme_light/"themeFile": "custom_theme/' "$CLIPSE_FILE"
+  ln -sf ~/.config/hypr/hyprlock-dark.conf ~/.config/hypr/hyprlock.conf
 
 else
   gsettings set org.gnome.desktop.interface gtk-theme 'rose-pine-dawn'
@@ -45,6 +50,7 @@ else
   sed -i 's/col\.active_border = rgba(524f67FF)/col\.active_border = rgba(CECACDFF)/' "$HYPRLAND_FILE"
   sed -i 's/col\.inactive_border = rgba(524f67FF)/col\.inactive_border = rgba(CECACDFF)/' "$HYPRLAND_FILE"
   sed -i 's/"themeFile": "custom_theme/"themeFile": "custom_theme_light/' "$CLIPSE_FILE"
+  ln -sf ~/.config/hypr/hyprlock-light.conf ~/.config/hypr/hyprlock.conf
 fi;
 
 if [[ -z "$TMUX" ]]; then
@@ -61,4 +67,9 @@ if [ -n "$kitty_instances" ]; then
     for instance in $kitty_instances; do
         kill -USR1 "$instance"
     done
+fi
+
+sleep 1
+if [[ "$(cat /proc/acpi/button/lid/LID0/state)" == *"closed"* ]] && [[ "$(hyprctl monitors -j | jq '.[] | select(.name=="eDP-1") | .disabled')" == "false" ]]; then
+    hyprctl keyword monitor "eDP-1,disable"
 fi
