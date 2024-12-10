@@ -50,12 +50,12 @@
         "exec": "~/bin/weather.sh",
         "return-type": "json"
     },
-    "custom/kbdlight": {
-        "exec": "brightnessctl -d dell::kbd_backlight g | awk '{ print int($1 * 50) }'",
-        "format": "  {}%",
-        "interval": 1,
-        "output": ["eDP-1"]
-    },
+    // "custom/kbdlight": {
+        // "exec": "brightnessctl -d dell::kbd_backlight g | awk '{ print int($1 * 50) }'",
+        // "format": "  {}%",
+        // "interval": 1,
+        // "output": ["eDP-1"]
+    // },
     "tray": {
         "spacing": 10
     },
