@@ -83,11 +83,11 @@ window#waybar.hidden {
     background-color: @highlight-med;
 }
 
-#wireplumber,
-#backlight,
-#memory {
-    background-color: @overlay;
-}
+/* #wireplumber, */
+/* #backlight, */
+/* #memory { */
+    /* background-color: @overlay; */
+/* } */
 
 @keyframes blink {
     to {

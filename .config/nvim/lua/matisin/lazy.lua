@@ -24,9 +24,7 @@ require("lazy").setup({
     },
     { "direnv/direnv.vim" },
 
-    {
-        "catppuccin/nvim",
-    },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     "theprimeagen/harpoon",
     "mbbill/undotree",

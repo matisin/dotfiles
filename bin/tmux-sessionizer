@@ -12,7 +12,9 @@ else
         ~/Projects
         # ~/Projects/trikaw/dev-stack
         # ~/Projects/buk/bukhr
-        # ~/Projects/agendas.cl
+        ~/Projects/agendas
+        ~/Projects/altscore_challenges
+        ~/vaults    
         # ~/Projects/vaults/vaults
     )
 

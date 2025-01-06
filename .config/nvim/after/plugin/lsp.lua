@@ -31,37 +31,37 @@ lsp_config.ruby_lsp.setup {
     cmd = { "bundle", "exec", "ruby-lsp" }
 }
 
-lsp_config.sqls.setup {
-    on_attach = function(client, bufnr)
-        require('sqls').on_attach(client, bufnr) -- require sqls.nvim
-    end,
-    settings = {
-        sqls = {
-            connections = {
-                {
-                    alias = 'utils',
-                    driver = 'postgresql',
-                    dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=utils sslmode=disable',
-                },
-                {
-                    alias = 'users',
-                    driver = 'postgresql',
-                    dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=users sslmode=disable',
-                },
-                {
-                    alias = 'professionals',
-                    driver = 'postgresql',
-                    dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=professionals sslmode=disable',
-                },
-                {
-                    alias = 'companies',
-                    driver = 'postgresql',
-                    dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=companies sslmode=disable',
-                },
-            },
-        },
-    },
-}
+-- lsp_config.sqls.setup {
+-- on_attach = function(client, bufnr)
+-- require('sqls').on_attach(client, bufnr) -- require sqls.nvim
+-- end,
+-- settings = {
+-- sqls = {
+-- connections = {
+-- {
+-- alias = 'utils',
+-- driver = 'postgresql',
+-- dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=utils sslmode=disable',
+-- },
+-- {
+-- alias = 'users',
+-- driver = 'postgresql',
+-- dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=users sslmode=disable',
+-- },
+-- {
+-- alias = 'professionals',
+-- driver = 'postgresql',
+-- dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=professionals sslmode=disable',
+-- },
+-- {
+-- alias = 'companies',
+-- driver = 'postgresql',
+-- dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=companies sslmode=disable',
+-- },
+-- },
+-- },
+-- },
+-- }
 
 lsp_config.lua_ls.setup {
     settings = {
@@ -108,12 +108,18 @@ lsp_config.lua_ls.setup {
 lsp_config.marksman.setup {}
 lsp_config.svelte.setup {}
 lsp_config.ts_ls.setup {}
-lsp_config.gopls.setup {}
+lsp_config.gopls.setup {
+    settings = {
+        gopls = {
+            buildFlags = { "-tags=remote,!remote" }
+        }
+    }
+}
 lsp_config.nixd.setup {}
 lsp_config.jdtls.setup {}
 lsp_config.jsonls.setup {}
 lsp_config.cssls.setup {}
-lsp_config.terraform_lsp.setup{}
-lsp_config.glsl_analyzer.setup{}
+lsp_config.terraform_lsp.setup {}
+lsp_config.glsl_analyzer.setup {}
 
 lsp.setup()
