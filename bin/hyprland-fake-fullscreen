@@ -3,10 +3,7 @@
 workspace=$1
 command_to_run=$2
 
-hyprctl dispatch workspace $workspace
-# Verifica si el workspace está vacío
-# if [ "$(hyprctl workspaces -j | jq ".[] | select(.id == $workspace) | .windows")" = "0" ]; then
+hyprctl dispatch workspace "$workspace"
 if [ "$(hyprctl clients -j | jq ".[] | select(.workspace.id == $workspace and .floating == false) | .class")" = "" ]; then
-    # Si está vacío, ejecuta el comando
     hyprctl dispatch exec "[workspace $workspace silent] $command_to_run"
 fi

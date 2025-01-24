@@ -3,22 +3,17 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    # Directorios para el segundo comando
     no_depth_dirs=(
         # ~/Projects/trikaw/dev-stack 
     )
 
     depth_dirs=(
         ~/Projects
-        # ~/Projects/trikaw/dev-stack
-        # ~/Projects/buk/bukhr
         ~/Projects/agendas
         ~/Projects/altscore_challenges
         ~/vaults    
-        # ~/Projects/vaults/vaults
     )
 
-    # Comando combinado
     selected=$(
     {
         find "${depth_dirs[@]}" -maxdepth 1 -type d
@@ -35,15 +30,15 @@ selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
+    tmux new-session -s "$selected_name" -c "$selected"
     exit 0
 fi
 
-if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
-    if [[ $selected_name != $USER ]]; then
-        tmux send-keys -t $selected_name C-z 'nvim' Enter
+if ! tmux has-session -t="$selected_name" 2> /dev/null; then
+    tmux new-session -ds "$selected_name" -c "$selected"
+    if [[ $selected_name != "$USER" ]]; then
+        tmux send-keys -t "$selected_name" C-z 'nvim' Enter
     fi
 fi
 
-tmux switch-client -t $selected_name
+tmux switch-client -t "$selected_name"

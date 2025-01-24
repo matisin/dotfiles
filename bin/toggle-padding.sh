@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 KITTY_FILE="${HOME:-/home/$USER}/.config/kitty/kitty.conf"
+GHOSTTY_FILE="${HOME:-/home/$USER}/.config/ghostty/config"
 
 current_padding=$(grep "window_margin_width" $KITTY_FILE | awk '{print $3}')
 
@@ -21,3 +22,10 @@ if [ -n "$kitty_instances" ]; then
     done
 fi
 
+ghostty_padding=$(grep "window-padding-x" $GHOSTTY_FILE | awk '{print $3}')
+
+if [ "$ghostty_padding" == 350 ]; then
+    sed -i 's/window-padding-x = [0-9][0-9][0-9]/window-padding-x = 150/' "$GHOSTTY_FILE"
+else
+    sed -i 's/window-padding-x = [0-9][0-9][0-9]/window-padding-x = 350/' "$GHOSTTY_FILE"
+fi;
