@@ -1,4 +1,5 @@
 local lualine = require('lualine')
+
 lualine.setup({
     options = {
         theme = 'rose-pine',
@@ -6,7 +7,6 @@ lualine.setup({
         section_separators = { right = '', left = '' },
         component_separators = { left = '', right = '' },
         always_show_tabline = true
-        -- section_separators = { left = '', right = '' },
     },
     tabline = {
         lualine_a = { 'mode' },

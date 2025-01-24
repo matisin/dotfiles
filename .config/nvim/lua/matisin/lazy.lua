@@ -12,6 +12,19 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",              -- Carga el plugin de manera diferida
+        config = function()
+            require("which-key").setup() -- Configuración básica
+        end,
+    },
+    {
+        'VonHeikemen/fine-cmdline.nvim',
+        dependencies = {
+            { 'MunifTanjim/nui.nvim' }
+        }
+    },
     { "jose-elias-alvarez/null-ls.nvim" },
     { "nanotee/sqls.nvim" },
     { "norcalli/nvim-colorizer.lua" },
@@ -24,7 +37,7 @@ require("lazy").setup({
     },
     { "direnv/direnv.vim" },
 
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { "catppuccin/nvim",                 name = "catppuccin", priority = 1000 },
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     "theprimeagen/harpoon",
     "mbbill/undotree",
@@ -59,7 +72,6 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons" }
     },
     "preservim/nerdcommenter",
-    "tpope/vim-fugitive",
     "rhysd/conflict-marker.vim",
     { 'rebelot/kanagawa.nvim' },
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },

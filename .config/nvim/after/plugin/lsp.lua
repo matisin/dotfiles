@@ -3,8 +3,6 @@ local lsp_config = require('lspconfig')
 
 lsp.preset('recomended')
 
-vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
-
 vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function(event)
@@ -27,99 +25,49 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
-lsp_config.ruby_lsp.setup {
-    cmd = { "bundle", "exec", "ruby-lsp" }
-}
-
--- lsp_config.sqls.setup {
--- on_attach = function(client, bufnr)
--- require('sqls').on_attach(client, bufnr) -- require sqls.nvim
--- end,
--- settings = {
--- sqls = {
--- connections = {
--- {
--- alias = 'utils',
--- driver = 'postgresql',
--- dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=utils sslmode=disable',
--- },
--- {
--- alias = 'users',
--- driver = 'postgresql',
--- dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=users sslmode=disable',
--- },
--- {
--- alias = 'professionals',
--- driver = 'postgresql',
--- dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=professionals sslmode=disable',
--- },
--- {
--- alias = 'companies',
--- driver = 'postgresql',
--- dataSourceName = 'host=127.0.0.1 port=5432 user=username password=password dbname=companies sslmode=disable',
--- },
--- },
--- },
--- },
--- }
-
 lsp_config.lua_ls.setup {
-    settings = {
-        lua = {
+    on_init = function(client)
+        if client.workspace_folders then
+            local path = client.workspace_folders[1].name
+            if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+                return
+            end
+        end
+
+        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
             runtime = {
-                -- tell the language server which version of lua you're using
-                -- (most likely luajit in the case of neovim)
-                version = 'luajit',
-            },
-            diagnostics = {
-                -- get the language server to recognize the `vim` global
-                globals = {
-                    'vim',
-                    'require'
-                },
+                version = 'LuaJIT'
             },
             workspace = {
-                -- make the server aware of neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
-            -- do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
-            },
-        },
-    },
+                checkThirdParty = false,
+                library = {
+                    vim.env.VIMRUNTIME
+                }
+            }
+        })
+    end,
+    settings = {
+        Lua = {}
+    }
 }
--- lsp_config.yamlls.setup({
--- on_attach = function(client)
--- if client.resolved_capabilities.document_formatting then
--- vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync(nil, 1000)")
--- end
--- end,
--- settings = {
--- yaml = {
--- format = {
--- enable = true,
--- prettier = true
--- }
--- }
--- }
--- })
+
+lsp_config.gopls.setup {
+    settings = {
+        gopls = {
+            buildFlags = { "-tags=remote,!remote,testing" }
+        }
+    }
+}
 
 lsp_config.marksman.setup {}
 lsp_config.svelte.setup {}
 lsp_config.ts_ls.setup {}
-lsp_config.gopls.setup {
-    settings = {
-        gopls = {
-            buildFlags = { "-tags=remote,!remote" }
-        }
-    }
-}
 lsp_config.nixd.setup {}
 lsp_config.jdtls.setup {}
 lsp_config.jsonls.setup {}
 lsp_config.cssls.setup {}
 lsp_config.terraform_lsp.setup {}
 lsp_config.glsl_analyzer.setup {}
+lsp_config.zls.setup {}
 
 lsp.setup()

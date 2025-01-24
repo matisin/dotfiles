@@ -464,25 +464,26 @@ local days = {
 
 local function combine_ascii(first_art, second_art, spaces)
     local finalArt = {}
-    -- Obtener el ancho real contando espacios
+
     local function count_chars(str)
         return select(2, str:gsub("[^\128-\193]", ""))
     end
+
     local first_width = count_chars(first_art[1])
     local second_width = count_chars(second_art[1])
     local max_width = math.max(first_width, second_width)
-    -- Calcular padding para cada arte una sola vez
+
     local first_padding = math.floor((max_width - first_width) / 2)
     local second_padding = math.floor((max_width - second_width) / 2)
-    -- Añadir primer arte centrado
+
     for i = 1, #first_art do
         finalArt[i] = string.rep(" ", first_padding) .. first_art[i]
     end
-    -- Añadir espacios opcionales
+
     for _ = 1, (spaces or 1) do
         finalArt[#finalArt + 1] = ""
     end
-    -- Añadir segundo arte centrado
+
     for i = 1, #second_art do
         finalArt[#finalArt + 1] = string.rep(" ", second_padding) .. second_art[i]
     end
@@ -490,7 +491,6 @@ local function combine_ascii(first_art, second_art, spaces)
 end
 
 local function week_capybara()
-    -- Días festivos y eventos especiales
     local specialDays = {
         ["01-01"] = "new_year",
         ["18-09"] = "18",
@@ -499,17 +499,14 @@ local function week_capybara()
         ["05-10"] = "cumple_jose",
     }
 
-    -- Obtén la fecha actual en el formato MM-DD
     local today = os.date("%m-%d")
 
-    -- Verifica si hoy es un día especial
     if specialDays[today] then
         local day = specialDays[today]
         local image = capybaras[day]
         local title = days[day]
         return combine_ascii(title, image, 2)
     else
-        -- Si no es un día especial, sigue el procedimiento normal
         local daysoftheweek = { 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' }
         local day = daysoftheweek[os.date('*t').wday]
         local image = capybaras[day]
@@ -539,7 +536,6 @@ theta.buttons.val = {
     dashboard.button("g", "󰊄  Buscar texto", "<cmd>Telescope live_grep<CR>"),
     dashboard.button("s", "  Cambiar sesión", "<cmd>silent !tmux neww tmux-sessionizer<CR>"),
     dashboard.button("v", "  Mostrar directorio", "<cmd>Ex<CR>"),
-    -- dashboard.button("c", "  Configuration", "<cmd>cd stdpath('config')<CR>"),
     dashboard.button("u", "  Actualizar plugins", "<cmd>Lazy sync<CR>"),
     dashboard.button("q", "󰅚  Cerrar", "<cmd>qa<CR>"),
 }
