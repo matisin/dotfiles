@@ -112,5 +112,8 @@ require("lazy").setup({
         dependencies = {
             "nvim-lua/plenary.nvim",
         }
-    }
+    },
+    "ziglang/zig.vim",
+    "David-Kunz/gen.nvim",
+    "xiyaowong/transparent.nvim"
 })

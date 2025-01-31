@@ -1,7 +1,7 @@
 local wk = require("which-key")
 
 wk.setup({
-    preset = "helix",
+    preset = "classic",
     plugins = {
         marks = true,
         registers = true,
@@ -16,3 +16,8 @@ wk.setup({
     },
     ignore_missing = true,
 })
+
+-- wk.show({
+    -- keys = "<c-w>",
+    -- loop = true,
+-- })
